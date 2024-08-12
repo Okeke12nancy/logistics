@@ -1,0 +1,35 @@
+<div class="order-form">
+  <h2>{{ isEdit ? "Edit Order" : "Create Order" }}</h2>
+  <form (ngSubmit)="saveOrder()" #orderForm="ngForm">
+    <label for="sender">Sender Information:</label>
+    <input id="sender" name="sender" [(ngModel)]="order.sender" required />
+
+    <label for="receiver">Receiver Information:</label>
+    <input
+      id="receiver"
+      name="receiver"
+      [(ngModel)]="order.receiver"
+      required
+    />
+
+    <label for="items">Item Details:</label>
+    <textarea
+      id="items"
+      name="items"
+      [(ngModel)]="order.items"
+      required
+    ></textarea>
+
+    <label for="instructions">Delivery Instructions:</label>
+    <textarea
+      id="instructions"
+      name="instructions"
+      [(ngModel)]="order.instructions"
+    ></textarea>
+
+    <button type="submit">
+      {{ isEdit ? "Update Order" : "Create Order" }}
+    </button>
+    <button (click)="cancel()">Cancel</button>
+  </form>
+</div>

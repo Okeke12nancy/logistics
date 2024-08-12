@@ -1,0 +1,10 @@
+<div class="customer-dashboard">
+  <h2>Customer Dashboard</h2>
+  <div class="current-shipments">
+    <h3>Current Shipments</h3>
+    <div *ngFor="let shipment of shipments">
+      <p>{{ shipment.details }}</p>
+      <button (click)="trackShipment(shipment.id)">Track Shipment</button>
+    </div>
+  </div>
+</div>

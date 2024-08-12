@@ -1,0 +1,27 @@
+<div class="order-list">
+  <h2>Order List</h2>
+  <button routerLink="/orders/create">Create New Order</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th (click)="sort('orderId')">Order ID</th>
+        <th (click)="sort('status')">Status</th>
+        <th (click)="sort('date')">Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.orderId }}</td>
+        <td>{{ order.status }}</td>
+        <td>{{ order.date | date }}</td>
+        <td>
+          <button (click)="viewOrder(order.id)">View</button>
+          <button (click)="editOrder(order.id)">Edit</button>
+          <button (click)="deleteOrder(order.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,27 @@
+<div class="dashboard-container">
+  <h1>Logistics Manager Dashboard</h1>
+
+  <div class="order-actions">
+    <h3>Order Management</h3>
+    <button (click)="createOrder()">Create Order</button>
+    <button (click)="manageOrders()">Manage Orders</button>
+  </div>
+
+  <div class="assign-orders">
+    <h3>Assign Orders</h3>
+    <p>Select orders to assign to dispatchers:</p>
+    <ul>
+      <li *ngFor="let order of orders">
+        <input
+          type="checkbox"
+          [value]="order.id"
+          (change)="toggleOrderSelection(order.id)"
+        />
+        Order ID: {{ order.id }}
+      </li>
+    </ul>
+    <button (click)="assignSelectedOrders()">
+      Assign Selected Orders to Dispatchers
+    </button>
+  </div>
+</div>

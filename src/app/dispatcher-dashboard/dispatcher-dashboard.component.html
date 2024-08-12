@@ -1,0 +1,10 @@
+<div class="dispatcher-dashboard">
+  <h2>Dispatcher Dashboard</h2>
+  <div class="assigned-shipments">
+    <h3>Assigned Shipments</h3>
+    <div *ngFor="let shipment of shipments">
+      <p>{{ shipment.details }}</p>
+      <button (click)="updateStatus(shipment.id)">Update Status</button>
+    </div>
+  </div>
+</div>

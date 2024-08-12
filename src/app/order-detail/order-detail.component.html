@@ -1,0 +1,25 @@
+<div class="order-detail">
+  <h2>Order Detail</h2>
+
+  <div *ngIf="order">
+    <p><strong>Order ID:</strong> {{ order.orderId }}</p>
+    <p><strong>Status:</strong> {{ order.status }}</p>
+    <p><strong>Date:</strong> {{ order.date | date }}</p>
+    <p><strong>Sender:</strong> {{ order.sender }}</p>
+    <p><strong>Receiver:</strong> {{ order.receiver }}</p>
+    <p><strong>Items:</strong> {{ order.items }}</p>
+    <p><strong>Instructions:</strong> {{ order.instructions }}</p>
+
+    <h3>Order History</h3>
+    <ul>
+      <li *ngFor="let history of order.history">
+        {{ history.timestamp | date }} - {{ history.status }} -
+        {{ history.location }}
+      </li>
+    </ul>
+
+    <button routerLink="/orders/edit/{{ order.id }}">Edit</button>
+    <button (click)="deleteOrder()">Delete</button>
+    <button routerLink="/orders">Back to Order List</button>
+  </div>
+</div>

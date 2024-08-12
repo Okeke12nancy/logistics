@@ -1,0 +1,27 @@
+<div class="admin-dashboard">
+  <h2>Admin Dashboard</h2>
+  <div class="statistics">
+    <h3>System Statistics</h3>
+    <p>Total Orders: {{ totalOrders }}</p>
+    <p>Active Shipments: {{ activeShipments }}</p>
+  </div>
+
+  <div class="quick-links">
+    <h3>Quick Links</h3>
+    <ul>
+      <li><a routerLink="/manage-employees">Manage Employees</a></li>
+      <li><a routerLink="/view-reports">View Reports</a></li>
+      <li><a routerLink="/configure-settings">Configure Settings</a></li>
+    </ul>
+  </div>
+
+  <div class="summary">
+    <h3>Order Summary</h3>
+  </div>
+
+  <div class="quick-access">
+    <h3>Quick Access</h3>
+    <button routerLink="/order-management">Order Management</button>
+    <button routerLink="/shipment-tracking">Shipment Tracking</button>
+  </div>
+</div>
